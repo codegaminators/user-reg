@@ -1,0 +1,197 @@
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+html {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.text-black {
+  color: black;
+}
+.text-inherit {
+  color: inherit;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+.container {
+  width: 100%;
+  max-width: 95%;
+  margin: auto;
+}
+
+.overlay {
+  //   background-color: yellow;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: inherit;
+}
+
+.btn,
+button {
+  padding: 1.56rem 4.1rem;
+  border: none;
+  text-transform: uppercase;
+
+  &.btn-sm {
+    padding: 1rem 1.5rem;
+  }
+  &.btn-danger {
+    background-color: $danger;
+    color: white;
+  }
+  &.btn-success {
+    background-color: $success;
+    color: white;
+  }
+  &.transparent {
+    background: transparent;
+    padding: 0;
+  }
+}
+
+.ml-1 {
+  margin-left: 0.5rem;
+}
+.mr-1 {
+  margin-right: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 1rem;
+}
+.mr-2 {
+  margin-left: 1rem;
+}
+
+.bg-danger {
+  background-color: $danger;
+}
+.text-light {
+  color: white;
+}
+
+.navbar {
+  //   @extend .container;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .nav {
+    list-style: none;
+    display: flex;
+    &-item {
+      margin: 0 1rem;
+      .nav-link {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.home {
+  background: url("/images/bg.png") no-repeat;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  .nav-link {
+    color: white;
+  }
+  .container {
+    height: inherit;
+
+    display: flex;
+    flex-direction: column;
+    .banner {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      &-wrapper {
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        width: 100%;
+        .text-content {
+          h1 {
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 3rem;
+            .bold {
+              font-size: inherit;
+              font-weight: 700;
+            }
+          }
+          p {
+            margin: 2.4rem 0;
+            line-height: 1.7rem;
+            color: #f1f1ef;
+            opacity: 0.6;
+          }
+        }
+
+        .auth {
+          background: rgba(241, 241, 239, 0.56);
+          padding: 2rem 1rem;
+          border-radius: 6%;
+          .wrapper {
+            width: 100%;
+            max-width: 33rem;
+            margin: auto;
+            height: 100%;
+            .navbar {
+              .nav {
+                &-link {
+                  &.active {
+                    color: black;
+                    border-bottom: 2px solid black;
+                  }
+                  color: gray;
+                }
+              }
+            }
+
+            form {
+              a {
+                text-decoration: none;
+              }
+              margin-top: 1.6rem;
+              .btn {
+                margin-top: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.users {
+  header {
+    background-color: rgba(0, 0, 0, 0.8);
+    .nav-link {
+      color: white;
+    }
+  }
+}
+
+.form-control {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+}
