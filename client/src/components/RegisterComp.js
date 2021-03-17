@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 const RegisterComp = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -8,10 +8,22 @@ const RegisterComp = () => {
     password2: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(userInfo);
+    if (userInfo.password !== userInfo.password2)
+      return alert("Passwords do not match");
+    try {
+      const { data } = await axios.post("http://localhost:8000/users", {
+        name: userInfo.name,
+        email: userInfo.email,
+        password: userInfo.password,
+      });
+      alert("SUCCESS");
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+      alert("FAILED");
+    }
   };
 
   return (
